@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Network -->
+    <string name="config_network_api_url">https://maldur94.github.io</string>
+    <integer name="config_network_cache_size_mb">64</integer>
+
+    <!-- Database -->
+    <string name="config_database_name">bands.db</string>
+
+</resources>

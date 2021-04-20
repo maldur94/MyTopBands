@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#FF9436</color>
+    <color name="primary_variant">#5D7A90</color>
+    <color name="secondary">#FFFFFFFF</color>
+    <color name="band_list_card_view_background">#33424F</color>
+</resources>

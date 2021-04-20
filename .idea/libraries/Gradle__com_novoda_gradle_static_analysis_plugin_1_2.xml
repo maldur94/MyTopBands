@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.novoda:gradle-static-analysis-plugin:1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.novoda/gradle-static-analysis-plugin/1.2/ddc6fb4e37e718fec1ce35ad5ce6ad47b9b41bb5/gradle-static-analysis-plugin-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.novoda/gradle-static-analysis-plugin/1.2/401ea16c75e2cb32ecec71e714de96b9d406d9c6/gradle-static-analysis-plugin-1.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.novoda/gradle-static-analysis-plugin/1.2/bc659fb974dbd82f94f05994479a643b460caf2/gradle-static-analysis-plugin-1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

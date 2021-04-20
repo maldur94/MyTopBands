@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.pbartkowiak.mytopbands.core.data.ResourceStatus" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.pbartkowiak.mytopbands.ui.BandListViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondary"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include layout="@layout/toolbar" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/space_small"
+            android:background="@color/band_list_card_view_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBar">
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{viewModel.loadingStatus == ResourceStatus.SUCCESS ? View.VISIBLE : View.GONE}"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <include
+                    layout="@layout/item_list"
+                    app:viewModel="@{viewModel}" />
+
+            </FrameLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/activity_band_browser_empty_list_message"
+            android:textColor="@color/secondary"
+            android:textSize="@dimen/text_medium_size"
+            android:visibility="@{viewModel.bandList.empty &amp;&amp; viewModel.loadingStatus == ResourceStatus.SUCCESS || viewModel.loadingStatus == ResourceStatus.ERROR ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/swipeRefresh"
+            app:layout_constraintEnd_toEndOf="@+id/swipeRefresh"
+            app:layout_constraintStart_toStartOf="@+id/swipeRefresh"
+            app:layout_constraintTop_toTopOf="@+id/swipeRefresh" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/progressbar_size"
+            android:layout_height="@dimen/progressbar_size"
+            android:visibility="@{viewModel.loadingStatus == ResourceStatus.LOADING ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/swipeRefresh" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

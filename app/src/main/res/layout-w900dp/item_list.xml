@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pbartkowiak.mytopbands.ui.BandListViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <com.pbartkowiak.mytopbands.ui.adapter.BandCompoundRecyclerView
+            android:id="@+id/bandCompoundRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/space_small"
+            android:paddingEnd="@dimen/space_medium"
+            android:scrollbars="vertical"
+            app:callback="@{viewModel}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:modelList="@{viewModel.bandList}" />
+
+        <FrameLayout
+            android:id="@+id/itemDetailContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bandCompoundRecyclerView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+</layout>

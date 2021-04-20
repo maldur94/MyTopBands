@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyTopBands</string>
+
+    <string name="activity_band_browser_list_title">Band browser</string>
+    <string name="activity_band_browser_empty_list_message">No bands found.</string>
+
+    <string name="activity_band_details_title">Band website</string>
+
+    <string name="item_band_image_description">Band image</string>
+    <string name="item_band_years_active_label">Years active:</string>
+    <string name="item_band_origin_label">Origin:</string>
+    <string name="item_band_genres_label">Genres:</string>
+
+    <string name="connection_error_no_internet">No internet connection.</string>
+    <string name="connection_error_dialog_title">Connection error</string>
+
+</resources>
